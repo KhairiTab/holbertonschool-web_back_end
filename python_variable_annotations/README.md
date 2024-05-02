@@ -1,4 +1,5 @@
-# Python - Variable Annotations# Basic Annotations
+# Python - Variable Annotations 
+# Basic Annotations
 
 This project demonstrates the use of basic annotations in Python. It consists of several functions and variables with type annotations..
 
