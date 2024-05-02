@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""string and int/float to tuple"""
-from typing import Tuple, Union
+""" string and int/float to tuple"""
+
+from typing import Union, Tuple
 
 
-def to_key(k: str, v: Union[int, float]) -> Tuple[str, Union[int, float]]:
-
-    """Takes a string `k` and an int or float `v` as arguments
-    Returns a tuple containing `k` and the square of `v`
-    annotated as a float."""
-    return k, float(v) ** 2
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+    """
+    Takes a string k and an int or float v as arguments and returns a tuple.
+    The first element of the tuple is the string k.
+    The second element is the square of the int/float v
+    and is annotated as a float.
+    """
+    return (k, float(v) ** 2)
