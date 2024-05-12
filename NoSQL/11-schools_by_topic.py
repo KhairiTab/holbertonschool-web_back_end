@@ -9,4 +9,5 @@ def schools_by_topic(mongo_collection, topic):
     """   Returns:
         A list of dictionaries representing schools having the specific topic.
     """
-    return mongo_collection.find({"topic": topic})
+    collection = mongo_collection.find({"topic": topic})
+    return list(collection)
