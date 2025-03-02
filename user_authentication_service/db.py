@@ -35,28 +35,3 @@ class DB:
         self._session.add(new_user)
         self._session.commit()
         return new_user
-
-    def find_user_by(self, **kwargs) -> User:
-        """Find a user by arbitrary keyword arguments"""
-        try:
-            user = self._session.query(User).filter_by(**kwargs).one()
-            return user
-        except NoResultFound:
-            raise NoResultFound("No user found with the provided criteria.")
-        except InvalidRequestError:
-            raise InvalidRequestError("Invalid query arguments.")
-
-    def update_user(self, user_id: int, **kwargs) -> None:
-        """Update a user's attributes"""
-        try:
-            user = self.find_user_by(id=user_id)
-
-            for key, value in kwargs.items():
-                if hasattr(user, key):
-                    setattr(user, key, value)
-                else:
-                    raise ValueError(f"Invalid attribute: {key}")
-
-            self._session.commit()
-        except NoResultFound:
-            raise NoResultFound("No user found with the provided ID.")
