@@ -19,17 +19,15 @@ app.config.from_object(Config)
 
 
 def get_locale():
-    ''' Determine the best match for supported languages '''
+    ''' return best languages '''
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-babel.init_app(app, locale_selector=get_locale)
-
-
-@app.route("/", methods=["GET"], strict_slashes=False)
+@app.route("/")
 def hello_world():
     ''' return the template '''
-    return render_template('1-index.html')
+    local = get_locale()
+    return render_template('2-index.html', local=local)
 
 
 if __name__ == '__main__':
