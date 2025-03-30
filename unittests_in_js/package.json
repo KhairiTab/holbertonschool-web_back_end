@@ -1,5 +1,19 @@
 {
+  "name": "unittests_in_js",
+  "version": "1.0.0",
+  "description": "JavaScript unit testing project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "mocha": "^11.1.0"
+    "chai": "^4.3.4",
+    "mocha": "^10.2.0",
+    "sinon": "^20.0.0"
+  },
+  "dependencies": {
+    "unittests_in_js": "file:../unittests_in_js"
   }
 }
